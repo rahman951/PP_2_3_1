@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"> <meta charset="UTF-8"><meta charset="UTF-8">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<meta charset="UTF-8">
 <head>
     <title>Edit User</title>
     <style>
@@ -48,7 +50,7 @@
 </head>
 <body>
 <form th:method="POST" th:action="@{/id/update}" th:object="${user}">
-    <input type="hidden" th:field="*{id}" />
+    <input type="hidden" th:field="*{id}"/>
     <label for="firstName"> Enter name: </label>
     <input type="text" th:field="*{firstName}" id="firstName"/>
     <div style="color:red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Name Error</div>

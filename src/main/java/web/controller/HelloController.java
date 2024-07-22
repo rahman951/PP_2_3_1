@@ -44,8 +44,7 @@ public class HelloController {
 	
 	@PostMapping()
 	public String create(@ModelAttribute("user") @Valid User user, BindingResult bindingResult) {
-		if (bindingResult.hasErrors())
-			return "new";
+		if (bindingResult.hasErrors()) return "new";
 		userService.save(user);
 		return "redirect:/";
 	}
@@ -58,8 +57,7 @@ public class HelloController {
 	
 	@PostMapping("/id/update")
 	public String update(@ModelAttribute("user") @Valid User user, BindingResult bindingResult) {
-		if (bindingResult.hasErrors())
-			return "edit";
+		if (bindingResult.hasErrors()) return "edit";
 		userService.update(user);
 		return "redirect:/";
 	}

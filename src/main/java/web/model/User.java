@@ -1,10 +1,6 @@
 package web.model;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
 import javax.persistence.*;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.Size;
 import java.util.Objects;
 
 @Entity
@@ -16,18 +12,11 @@ public class User {
 	@Column(name = "id")
 	private Long id;
 	
-	@NotEmpty(message = "Имя не заполнено")
-	@Size(min = 2, max = 10, message = "Имя должно содержать от 2 до 10 символов")
-	@Column(name = "name")
+	
 	private String firstName;
 	
-	@NotEmpty(message = "Фамилия не заполнена")
-	@Size(min = 3, max = 15, message = "Слишком короткая или длинная фамилия")
-	@Column(name = "last_name")
 	private String lastName;
 	
-	@Min(value = 18, message = "Ошибка в возрасте, возраст должен быть > 18")
-	@Column(name = "age")
 	private int age;
 	
 	public User() {
@@ -70,6 +59,7 @@ public class User {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+	
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
@@ -85,12 +75,7 @@ public class User {
 	
 	@Override
 	public String toString() {
-		return "User{" +
-				"id=" + id +
-				", firstName='" + firstName + '\'' +
-				", lastName='" + lastName + '\'' +
-				", age=" + age +
-				'}';
+		return "User{" + "id=" + id + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", age=" + age + '}';
 	}
 }
 

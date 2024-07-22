@@ -18,13 +18,11 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	@Transactional
 	public List<User> index() {
 		return userDao.index();
 	}
 	
 	@Override
-	@Transactional
 	public User show(long id) {
 		return userDao.show(id);
 	}

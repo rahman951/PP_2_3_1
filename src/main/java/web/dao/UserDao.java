@@ -9,7 +9,7 @@ public interface UserDao {
 	
 	public User show(long id);
 	
-	public void save(User user) ;
+	public void save(User user);
 	
 	public void update(User personToBeUpdated);
 	
